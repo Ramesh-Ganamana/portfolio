@@ -1,0 +1,404 @@
+* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container */
+/* .container {
+    width: 90%; Adjusted width for smaller screens
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+
+/* Header Styles */
+.header {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 1;
+
+}
+
+/* Header Content Styles */
+.header-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header-text {
+    max-width: 60%;
+}
+
+.header-text h1 {
+    font-size: 1.5em;
+}
+
+.header-text p {
+    margin: 5px 0;
+}
+
+.photo img {
+    width: 150px;  /* Adjust to the size you need */
+  height: 150px; /* Must be equal to width to maintain a circular shape */
+  overflow: hidden; /* Ensures image doesn't overflow the container */
+  border-radius: 50%;
+}
+
+/* Navigation Styles */
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    margin-left: 20px;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.close-btn {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 20px;
+}
+
+.sidebar-list li {
+    margin-bottom: 20px;
+}
+
+.sidebar-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-text {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .photo {
+        margin-bottom: 10px;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+
+/* Sections */
+main {
+    margin-top: 300px; /* Reduced top margin for better spacing */
+}
+
+.section {
+    padding: 2rem 1rem; /* Adjusted padding for smaller screens */
+    background-color: #fff;
+    margin: 1rem 0;
+    scroll-margin-top:300px;
+    /* Adjusted for header height */
+}
+
+.section h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Experience Buttons */
+.tab-button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 5px; /* Adjusted margin for smaller screens */
+}
+
+.tab-button:hover {
+    background-color: #555;
+}
+
+/* Project Content */
+#project-content {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #333;
+}
+
+/* Technical Skills Section */
+.skills-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+    gap: 10px 5px;
+}
+
+.skill-item {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Align items vertically centered */
+}
+
+.skill-label {
+    font-weight: bold;
+    flex: 1; /* Take up remaining space, pushing the colon and value to the right */
+}
+
+.colon {
+    margin: 0 5px; /* Add space between label and colon */
+}
+
+.value{
+    align-items: left;
+}
+
+
+/* Certificates Section */
+.certificates-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.certificates-gallery figure {
+    margin: 0;
+    width: 300px; /* Adjust size as needed */
+    text-align: center;
+}
+
+.certificates-gallery img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.certificates-gallery figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Education Section */
+.education-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.education-details {
+    flex: 1;
+    max-width: 600px; /* Adjust as needed */
+}
+
+.education-details h3 {
+    margin-bottom: 0.5rem;
+}
+
+.education-details p {
+    margin-bottom: 0.5rem;
+}
+
+.certificate {
+    flex: 1;
+    max-width: 400px; /* Adjust as needed */
+    text-align: center;
+}
+
+.certificate figure {
+    margin: 0;
+}
+
+.certificate img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.certificate figcaption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #555;
+}
+.collapsible {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
+.collapsible-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.collapsible-content p {
+    margin: 0.5rem 0;
+}
+
+.collapsible-content a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.collapsible-content a:hover {
+    text-decoration: underline;
+}
+footer {
+    text-align: center;
+    font-size: x-small;
+    padding: 1rem 0;
+    background: black;
+    color: #cecaca;
+    width: 100%;
+}
+
+footer .Icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow icons to wrap */
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+}
+
+footer .Icons li {
+    padding: 10px;
+}
+
+footer i {
+    font-size: 24px;
+    color: #e1e8ec;
+}
+
+@media (max-width: 768px) {
+    footer .Icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .Icons li {
+        padding: 5px 0;
+    }
+}
+
+i.fab.fa-linkedin {
+    font-size: 24px;
+    color: #e1e8ec; /* LinkedIn's official color */
+}
+i.fas.fa-phone {
+    font-size: 24px;
+    color: #e1e8ec; /* LinkedIn's official color */
+}
+i.fas.fa-envelope {
+    font-size: 24px;
+    color:  #e1e8ec; /* You can change this to any color you like */
+}
+
+
+
